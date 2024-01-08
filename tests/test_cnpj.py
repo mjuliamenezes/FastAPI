@@ -17,7 +17,6 @@ def test_consultar_cnpj_success():
 
 # Teste de erro: CNPJ inválido
 def test_consultar_cnpj_invalid():
-    # Suponha que um CNPJ inválido seja usado para teste
     cnpj_invalido = "cnpj_invalido"
     
     response = requests.get(f"{url_base}/consultar-cnpj/{cnpj_invalido}")
@@ -29,7 +28,6 @@ def test_consultar_cnpj_invalid():
 
 # Teste de erro: resposta não foi bem sucedida
 def test_consultar_cnpj_error():
-    # Suponha que a consulta retorne um código de status diferente de 200
     cnpj_errado = "12345678901234"
 
     response = requests.get(f"{url_base}/consultar-cnpj/{cnpj_errado}")

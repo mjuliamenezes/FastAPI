@@ -10,7 +10,6 @@ task_base = {"id": 1, "titulo": "Titulo Teste 1", "descricao": "Descrição Test
 # Adicionar tarefa 
 # Teste de sucesso
 def test_add_task_success():
-    # Adicione o título como parâmetro de consulta na URL
     response = requests.post(f"{url_base}/tarefas?titulo={task_base['titulo']}&descricao={task_base['descricao']}", json=task_base)
     assert response.status_code == 200
     assert response.json()["titulo"] == "Titulo Teste 1"
@@ -83,4 +82,3 @@ def test_delete_task_not_found():
     assert response.status_code == 404
     assert "detail" in response.json()
     assert response.json()["detail"] == "Tarefa não encontrada"
-
